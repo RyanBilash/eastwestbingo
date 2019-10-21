@@ -90,7 +90,7 @@ async function generateCard(){
         }
     }
     console.log(s);
-    window.location.href = "https://sites.google.com/udel.edu/eastwestbingocard/card?id="+s;
+    window.location.href = "https://ryanbilash.github.io/eastwestbingo?id="+s;
 }
 
 async function getCard(id){
@@ -120,13 +120,9 @@ async function getCard(id){
     document.getElementById('tableThing') = s;
 }
 
-document.onload = function(){
-    if(window.location.href.includes("edit?authuser")){
-
-    }
-    else if(!window.location.href.includes("id=")) {
-        generateCard();
-    }else{
-        getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
-    }
+if(!window.location.href.includes("id=")) {
+    generateCard();
+}else{
+    getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
 }
+
