@@ -29,7 +29,7 @@ function getText(){
     var quote;
     return new Promise(function(resolve, reject) {
         var request = new XMLHttpRequest();;
-        request.open("GET", "https://raw.githubusercontent.com/RyanBilash/BingoCardTesting/master/items.txt", true);
+        request.open("GET", "https://raw.githubusercontent.com/RyanBilash/eastwestbingo/master/items.txt", true);
         request.send(null);
         request.onreadystatechange = function() {
             if (request.readyState == 4)
