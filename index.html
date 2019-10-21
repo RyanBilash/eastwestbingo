@@ -1,4 +1,10 @@
-<div id="tableThing"></div>
+<head>
+  <title>Bingo Card</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div id="tableThing" class="container"></div>
+
 <script>
   function Random(seed) {
     this._seed = seed % 2147483647;
@@ -103,7 +109,7 @@ async function getCard(id){
 
     await getTodaySquares();
 
-    var s = "<table>";
+    var s = "<table class="table table-striped">";
 
     for (var i = 0; i < 5; i++) {
         s+="<tr>";
@@ -128,3 +134,4 @@ if(!window.location.href.includes("id=")) {
     getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
 }
 </script>
+</body>
