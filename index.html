@@ -76,9 +76,9 @@ async function getTodaySquares(){
     }
     await updateSquares();
 }
-function generateCard(){
+async function generateCard(){
     canJumble = false;
-    getTodaySquares();
+    await getTodaySquares();
     var s = "";
     var nums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
     for (var i = 0; i < todaySquares.length; i++) {
@@ -131,7 +131,7 @@ async function fillList(){
   if(window.location.href.includes("id=")){
     getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")));
   }else if(window.location.href.includes("?new")){
-     await generateCard();
+     generateCard();
   }else{
     fillList();
   }
