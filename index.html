@@ -7,11 +7,16 @@
     #tableThing{
       padding-top:100px; 
     }
+    .todays{
+      background-color:#32CA19; 
+    }
   </style>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <div id="tableThing" class="container"></div>
+  <div id="squareList" class="container"></div>
+  <div class = "container"><button id="generateNew">Generate New Card</button></div>
 
 <script>
   function Random(seed) {
@@ -136,11 +141,27 @@ async function getCard(id){
 
     document.getElementById('tableThing').innerHTML = s;
 }
+  
+async function fillList(){
+  await getTodaySquares();
+  var s = "<table class='table table-striped table-bordered'>"
+  for(var i=0;i<squares.length;i++){
+    s+="<tr><td";
+    if(todaySquares.includes(squares[i])){
+     s+="class='todays'>" 
+    }
+    s+=squares[i]+"</td></tr>";
+  }
+  s+="</table>";
+}
 
 if(!window.location.href.includes("id=")) {
-    generateCard();
+    //generateCard();
+  fillList();
 }else{
     getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
 }
+  document.getElementById("generateNew").onclick = generateCard();
+  
 </script>
 </body>
