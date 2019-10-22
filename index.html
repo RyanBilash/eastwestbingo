@@ -144,15 +144,16 @@ async function getCard(id){
   
 async function fillList(){
   await getTodaySquares();
-  var s = "<table class='table table-striped table-bordered'>"
+  var s = "<table class='table table-striped table-bordered'>";
   for(var i=0;i<squares.length;i++){
     s+="<tr><td";
     if(todaySquares.includes(squares[i])){
-     s+="class='todays'>" 
+     s+="class='todays'>"; 
     }
     s+=squares[i]+"</td></tr>";
   }
   s+="</table>";
+  document.getElementById("squareList").innerHTML = s;
 }
 
 if(!window.location.href.includes("id=")) {
