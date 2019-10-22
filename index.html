@@ -130,12 +130,14 @@ async function fillList(){
 }
 //window.onload = setPage();
 function setPage(){
+  console.log("ok, good so far, maybe");
     if(!window.location.href.includes("id=")) {
         //generateCard();
         fillList();
     }else{
         getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
     }
+  console.log("cool, it did it");
   /*document.getElementById("generateNew").onclick = new function(){
    generateCard(); 
   }*/
