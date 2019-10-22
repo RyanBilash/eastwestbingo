@@ -133,7 +133,7 @@ async function fillList(){
   console.log("ok, good so far, maybe");
     if(!window.location.href.includes("id=")) {
         //generateCard();
-        fillList();
+        //fillList();
     }else{
         getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
     }
