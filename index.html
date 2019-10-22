@@ -156,13 +156,16 @@ async function fillList(){
   document.getElementById("squareList").innerHTML = s;
 }
 
-if(!window.location.href.includes("id=")) {
-    //generateCard();
-  fillList();
-}else{
-    getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
-}
-  //document.getElementById("generateNew").onclick = generateCard();
+  //window.onload = setPage();
+  function setPage(){
+    if(!window.location.href.includes("id=")) {
+        //generateCard();
+      fillList();
+    }else{
+        getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
+    }
+  }
+  document.getElementById("generateNew").onclick = generateCard();
   
 </script>
 </body>
