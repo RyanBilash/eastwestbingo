@@ -131,7 +131,7 @@ async function fillList(){
   if(window.location.href.includes("id=")){
     console.log("please don't die, it shouldn't");
     getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")));
-  }else if(window.location.href.includes("new=")){
+  }else if(window.location.href.includes("?new")){
      generateCard();
   }else{
     console.log("please don't die, it will");
