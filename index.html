@@ -121,14 +121,14 @@ async function fillList(){
     for(var i=0;i<squares.length;i++){
         s+="<tr><td";
         if(todaySquares.includes(squares[i])){
-            s+="class='todays'>";
+            s+=" class='todays'>";
         }
         s+=squares[i]+"</td></tr>";
     }
     s+="</table>";
     document.getElementById("squareList").innerHTML = s;
 }
-//window.onload = setPage();
+window.onload = setPage();
 function setPage(){
     if(!window.location.href.includes("id=")) {
         //generateCard();
@@ -136,6 +136,9 @@ function setPage(){
     }else{
         getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
     }
+  document.getElementById("generateNew").onclick = new function(){
+   generateCard(); 
+  }
 }
 //document.getElementById("generateNew").onclick = generateCard();
 </script>
