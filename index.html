@@ -76,10 +76,9 @@ async function getTodaySquares(){
     }
     await updateSquares();
 }
-async function generateCard(){
-    console.log("why the fuck am i in here?");
+function generateCard(){
     canJumble = false;
-    await getTodaySquares();
+    getTodaySquares();
     var s = "";
     var nums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
     for (var i = 0; i < todaySquares.length; i++) {
@@ -128,7 +127,7 @@ async function fillList(){
     s+="</table>";
     document.getElementById("squareList").innerHTML = s;
 }
-document.getElementById("generateNew").onclick = generateCard();
+//document.getElementById("generateNew").onclick = generateCard();
   if(window.location.href.includes("id=")){
     console.log("please don't die, it shouldn't");
     getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")));
