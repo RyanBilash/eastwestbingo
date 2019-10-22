@@ -124,7 +124,7 @@ async function getCard(id){
         for (var j = 0; j < 5; j++) {
             if(i==j && i==2){
                 s+="<td>Free Space</td>";
-              temp = 1;
+              temp = -1;
             }else{
                 s+="<td>"+todaySquares[i*5+j+temp]+"</td>";
             }
