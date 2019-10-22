@@ -128,21 +128,7 @@ async function fillList(){
     s+="</table>";
     document.getElementById("squareList").innerHTML = s;
 }
-//window.onload = setPage();
-//function setPage(){
-/*
-    if(!window.location.href.includes("id=")) {
-        //generateCard();
-        //fillList();
-    }else{
-        getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")))
-    }
-*/
-  /*document.getElementById("generateNew").onclick = new function(){
-   generateCard(); 
-  }*/
-//}
-//document.getElementById("generateNew").onclick = generateCard();
+document.getElementById("generateNew").onclick = generateCard();
   if(window.location.href.includes("id=")){
     console.log("please don't die, it shouldn't");
     getCard(window.location.href.substr(window.location.href.lastIndexOf("id=")));
